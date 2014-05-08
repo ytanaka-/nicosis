@@ -1,0 +1,57 @@
+@(videos:List[Video])
+
+@main("videoList"){
+    <ul>
+    @for(video <- videos){
+        <li class="effect video_box">
+            <div class="clearfix">
+                <div class="thumb_box">
+                    <a class="title_thumb" href=@video.thumbnail_url>
+                        <img class="thumbnail" src=@video.thumbnail_url width="160" height="120"/>
+                        <span class="video_time">@video.length</span>
+                    </a>
+                </div>
+                <div class="nico-info">
+                    <ul>
+                        <li>
+                            <p>投稿日時</p>
+                        </li>
+                        <li>
+                            <p>
+                                @video.first_retrieve
+                            </p>
+                        </li>
+                        <li class="info">
+                            <p>再生数　　:
+                                @video.view
+                            </p>
+                        </li>
+                        <li class="info">
+                            <p>コメント　:
+                                @video.comment
+                            </p>
+                        </li>
+                        <li class="info">
+                            <p>マイリスト:
+                                @video.mylist
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="video_td">
+                <div class="video_title">
+                    <a>
+                        @video.title
+                    </a>
+                </div>
+                <div class="description clearfix">
+                    <p>
+                        @video.description
+                    </p>
+                </div>
+            </div>
+        </li>
+    }
+    </ul>
+}

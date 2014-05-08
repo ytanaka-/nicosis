@@ -22,7 +22,7 @@ import java.util.Date
 
 object VideoModel{
 
-  //Anormのasで使うgパーサー
+  //Anormのasで使うパーサー
   val video = {
     get[Pk[Int]]("video_table.id")~
     get[String]("video_table.nicovideo_id")~
